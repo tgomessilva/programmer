@@ -1,0 +1,63 @@
+# Strings
+nome_do_instrumento = 'Guitarra elétrica'
+nome_do_instrumento = "Guitarra elétrica"
+print(nome_do_instrumento)
+# Caracteres de Escape
+resenha_do_filme = "O filme foi \"demais!\""
+resenha_do_filme2 = "O filme foi \'demais!\'"
+resenha_do_filme3 = "O filme foi \nDemais!"
+minhas_fotos = 'meu computador\\fotos\\minhas fotos'
+print(resenha_do_filme)
+print(resenha_do_filme2)
+print(resenha_do_filme3)
+print(minhas_fotos)
+# tudo que é colocado aqui, não é compilado
+'''Colocar um comentário
+beeeeemmmmm graaaaaaandeeeeee
+que não tem problema!'''
+
+# Formatando strings
+aluno = 'Rafael'
+nome_do_curso = 'Fotografia'
+mensagem_introducao = f'Bem vindo ao curso de {nome_do_curso} {aluno}'
+print(mensagem_introducao)
+
+# Métodos comuns de String
+nome_curso = ' Edição de Vídeo '
+print(nome_curso.upper())
+print(nome_curso.lower())
+print(nome_curso.strip())
+print(nome_curso.lstrip())
+print(nome_curso.rstrip())
+print(nome_curso.find('ção'))
+print(nome_curso.replace('Vídeo','Música'))
+print('https://sc.olx.com.br/?o=908q=relogio'.replace('relogio','carro'))
+
+# Acessando partes de um String
+mouse = 'Mouse'
+print(mouse[3])
+descricao_do_computador = 'Esse é uma computador que foi lançado e chegou para revolucionar o mercado atual'
+print(descricao_do_computador[-1])
+print(descricao_do_computador.index('o'))
+
+## DESAFIO!
+# Encontrar o indíce da letra A dentro de 'uma'
+print(descricao_do_computador.index('a'))
+
+# Exemplo facebook.com/devaprender
+link = "facebook.com/devaprender"
+print(link[0])
+print(link[-1])
+print(link[0:5])
+print(link[1:])
+print(link[-5:])
+print(link[5:])
+print(link[:-3])
+
+## DESAFIO
+# Extrair a palavra 'aprender'
+link2 = "instagram/devaprender"
+print(link2.find('aprender'))
+print(link2.index('r'))
+print(link2[((link2.find("aprender"))):])
+print(link2[13:])
