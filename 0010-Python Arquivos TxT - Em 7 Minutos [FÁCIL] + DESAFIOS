@@ -1,0 +1,55 @@
+# # Como criar e modificar arquivos:
+# valores_celulares =[850, 2230, 1500, 3500, 5000]
+
+# '''
+# 'r'  -> Usado somente para ler algo
+# 'w'  -> Usado somente para escrever algo
+# 'r+' -> Usado somente para ler e escrever algo
+# 'a'  -> Usado somente para acrescentar algo
+# '''
+
+# # # PARA ESCREVER
+# # with open('valores_celulares.txt','w') as arquivo:
+# #     for valor in valores_celulares:
+# #         arquivo.write(str(valor) + '\n')
+
+# # # PARA ACRESCENTAR
+# # with open('valores_celulares.txt','a') as arquivo:
+# #     for valor in valores_celulares:
+# #         arquivo.write(str(valor) + '\n')
+
+# # # PARA LER
+# # with open('valores_celulares.txt','r') as arquivo:
+# #     for valor in valores_celulares:
+# #         print(valor)
+
+# # # PARA LER SEM ALTERAR NADA
+# # with open('valores_celulares.txt','r') as arquivo:
+# #     for valor in arquivo:
+# #         print(valor)
+
+# # # PARA LER E ESCREVER
+# # with open('valores_celulares.txt','r+') as arquivo:
+# #     for valor in arquivo:
+# #         print(valor)
+# #     arquivo.write('9000')
+
+
+# DESAFIO
+# Faça todos os desafios a seguir e depois clique a "Share", copie o código e mande no comentário do vídeo, 
+# para que eu veja que você conseguiu (ou não) fazer! Eu confio em VOCÊ!
+
+# # Desafio 1 - Exiba todos os nomes dos inscritos que estão no arquivo inscritos.txt no console
+# with open('inscritos.txt', 'r') as arquivo:
+#     for valor in arquivo:
+#         print(valor)
+
+# # Desafio 2 - Adicione o seu nome na lista de inscritos e depois todos os nomes que estão no arquivo inscritos.txt no console
+# with open('inscritos.txt', 'a') as arquivo:
+#     arquivo.write('Tiago Gomes' + '\n')
+
+# Desafio 3 - Com o seu nome já na lista de inscritos, exiba o nome de cada pessoas que está inscrito na lista + 
+# o número que ele representa na lista em ordem crescente (ex: 1 jhonatan , 2 Patricio Silva, 3 Kid Boy 3000)
+# with open('inscritos.txt', 'r') as arquivo:
+#     for index, valores in enumerate(arquivo):
+#         print(index + 1, valores)
