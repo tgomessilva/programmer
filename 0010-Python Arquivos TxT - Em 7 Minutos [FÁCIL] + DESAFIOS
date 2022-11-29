@@ -53,3 +53,4 @@
 # with open('inscritos.txt', 'r') as arquivo:
 #     for index, valores in enumerate(arquivo):
 #         print(index + 1, valores)
+ 
