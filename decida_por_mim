@@ -1,0 +1,38 @@
+# Projeto 5 - Decida por mim
+# Faça uma pergunta para o programa e ele terá que te dar uma resposta
+
+import random
+import PySimpleGUI as sg
+
+
+class DecidaPorMim:
+    def __init__(self):
+        self.respostas = [
+            'Com certeza, você deve fazer isso!',
+            'Não sei, você que sabe!',
+            'Não faz isso não!',
+            'Acho que tá na hora certa!'
+        ]
+
+    def Iniciar(self):
+        # Layout
+        self.layout = [
+            [sg.Text('Faça sua pergunta: ')],
+            [sg.Input(size=30)],
+            [sg.Output(size=(30, 10))],
+            [sg.Button('Decida por mim!'), sg.Button('Sair do programa')]
+        ]
+        # Criar a janela
+        self.janela = sg.Window('Decida por mim!', layout=self.layout)
+        while True:
+            # Ler os valores
+            self.eventos, self.valores = self.janela.Read()
+            # Fazer algo com os valores
+            if self.eventos == 'Decida por mim!':
+                print(random.choice(self.respostas))
+            elif self.eventos == 'Sair do programa':
+                break
+
+
+decida = DecidaPorMim()
+decida.Iniciar()
