@@ -1,0 +1,60 @@
+# Projeto 7 - Jogo de Aventura
+# Um jogo de decisões onde eu terei que criar varios finais diferentes baseados nas respostas que forem dadas
+
+# Eu quero chegar a finais diferentes na minha historia, de acordo com as respostas que eu passe para o programa
+
+# Qual é o cenário : Eu estou numa guerra entre duas nações, e nós temos 2 lados: LadoA e LadoB. Somente o ladoA irá
+# vencer, e o ladoB irá perder! então eu tenho que tomar as decisões corretas para chegar até a vitória, que somente o
+# ladoA irá conseguir!
+import PySimpleGUI as sg
+
+
+class JogoDeAventura:
+    def __init__(self):
+        self.pergunta1 = 'Você nasceu no Norte ou Sul? (n/s) '  # Norte = ladoA Sul = LadoB
+        self.pergunta2 = 'Você prefere a Espada ou Escudo? (espada/escudo) '    # Espada = ladoA Escudo = LadoB
+        self.pergunta3 = 'Qual é a sua Especialidade? (linha de frente/tático) '    # Linha de Frente = ladoA Tático = LadoB
+        self.finalhistoria1 = 'Você será um herói na linha de frente!'
+        self.finalhistoria2 = 'Você será um herói protegendo todas as nossas tropas!'
+        self.finalhistoria3 = 'Você irá se sacrificar na batalha!'
+        self.finalhistoria4 = 'Você não é capaz de lutar nessa batalha!'
+
+    def Iniciar(self):
+        # Layout
+        self.layout = [
+            [sg.Output(size=(50, 3))],
+            [sg.Input(size=(25, 0), key='escolha')],
+            [sg.Button('Iniciar'), sg.Button('Responder'), sg.Button('Sair')]
+        ]
+        # Criar janela
+        self.janela = sg.Window('Jogo de Aventura', layout=self.layout)
+        while True:
+            # Ler os dados
+            self.LerValores()
+            # Fazer algo com os dados
+            if self.evento == 'Iniciar':
+                print(self.pergunta1)
+                self.LerValores()
+                if self.valores['escolha'] == 'n':
+                    print(self.pergunta2)
+                    self.LerValores()
+                    if self.valores['escolha'] == 'espada':
+                        print(self.finalhistoria1)
+                    if self.valores['escolha'] == 'escudo':
+                        print(self.finalhistoria2)
+                if self.valores['escolha'] == 's':
+                    print(self.pergunta3)
+                    self.LerValores()
+                    if self.valores['escolha'] == 'linha de frente':
+                        print(self.finalhistoria3)
+                    if self.valores['escolha'] == 'tático':
+                        print(self.finalhistoria4)
+            if self.evento == 'Sair':
+                break
+
+    def LerValores(self):
+        self.evento, self.valores = self.janela.Read()
+
+
+jogo = JogoDeAventura()
+jogo.Iniciar()
