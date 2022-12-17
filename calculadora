@@ -1,0 +1,49 @@
+""" Calculadora com while """
+
+print('-'*12, 'Calculadora', '-'*12)
+print('Digite os números que deseja calcular \n')
+while True:
+    try:
+        # Entrada de valores
+        numero1 = input('Digite um número: ')
+        numero2 = input('Digite outro número: ')
+        # Conversão das entradas
+        num1f = float(numero1)
+        num2f = float(numero2)
+
+        # Menu
+        print('\nQual operação você deseja realizar?'
+              '\n[1] Soma'
+              '\n[2] Subtração'
+              '\n[3] Multiplicação'
+              '\n[4] Divisão'
+              '\n[5] Sair do programa')
+
+        operacao = input('Escolha a operação: ')
+        # Conversão da escolha do Menu
+        operacao_int = int(operacao)
+
+        #  Condição de saída
+        if operacao_int == 5:
+            print('\nAté mais!')
+            break
+        # Condição de Soma
+        elif operacao_int == 1:
+            soma = num1f + num2f
+            print(f'\nA soma dos números {num1f:.2f} e {num2f:.2f} é {soma:.2f} \n')
+        # Condição de subtração
+        elif operacao_int == 2:
+            subtracao = num1f - num2f
+            print(f'\nA subtração dos números {num1f:.2f} e {num2f:.2f} é {subtracao:.2f} \n')
+        # Condição de multiplicação
+        elif operacao_int == 3:
+            multiplicacao = num1f * num2f
+            print(f'\nA multiplicação dos números {num1f:.2f} e {num2f:.2f} é {multiplicacao:.2f} \n')
+        # Condição de divisão
+        elif operacao_int == 4:
+            divisao = num1f / num2f
+            print(f'\nA divisão dos números {num1f:.2f} e {num2f:.2f} é {divisao:.2f} \n')
+    except:
+        # Caso tenha digitado diferente de números
+        print('\nDigite apenas números! \n')
+        continue
