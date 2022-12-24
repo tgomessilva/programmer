@@ -25,6 +25,7 @@ while True:
     # Caso queira inserir um item
     if opcao == 'i':
         os.system('cls')  # Apaga histórico
+        # Insere item na lista
         lista.append(input('Digite o item: ').capitalize())
         os.system('cls')  # Apaga histórico
 
@@ -35,7 +36,7 @@ while True:
             os.system('cls')  # Apaga histórico
             indice = input('Escolha um índice para apagar: ')
             indice_num = int(indice)
-            lista.pop(indice_num)
+            lista.pop(indice_num)  # Apaga item na lista
             os.system('cls')  # Apaga histórico
         # No caso de erro de tipo do valor digitado
         except ValueError:
@@ -47,6 +48,11 @@ while True:
             os.system('cls')  # Apaga histórico
             print('Não foi possível apagar este índice\n'
                   'Índice não existe na lista\n')
+        # No caso de erro de valor digitado do índice inexistente
+        except Exception:
+            os.system('cls')  # Apaga histórico
+            print('Não foi possível apagar este índice\n'
+                  'Erro desconhecido\n')
 
     # Caso queira listar os itens
     if opcao == 'l':
