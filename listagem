@@ -1,0 +1,61 @@
+# Importa biblioteca comandos sitema operacional
+import os
+
+# Cria lista vazia
+lista = []
+
+# Início loop
+while True:
+    # Inserir valor do menu
+    opcao = input('Selecione uma opção \n'
+                  '[i]nserir  [a]pagar  [l]istar:  [s]air: ').lower()
+
+    # Caso digite algo diferente do menu
+    if opcao not in ('i', 'a', 'l', 's'):
+        os.system('cls')  # Apaga histórico
+        print('Selecione uma letra do menu!\n')
+        continue
+
+    # Caso queira sair
+    if opcao == 's':
+        os.system('cls')  # Apaga histórico
+        print('Obrigado! Aguardamos seu retorno!\n')
+        break
+
+    # Caso queira inserir um item
+    if opcao == 'i':
+        os.system('cls')  # Apaga histórico
+        lista.append(input('Digite o item: ').capitalize())
+        os.system('cls')  # Apaga histórico
+
+    # Caso queira apagar um item
+    if opcao == 'a':
+        # Tentativa e excessões
+        try:
+            os.system('cls')  # Apaga histórico
+            indice = input('Escolha um índice para apagar: ')
+            indice_num = int(indice)
+            lista.pop(indice_num)
+            os.system('cls')  # Apaga histórico
+        # No caso de erro de tipo do valor digitado
+        except ValueError:
+            os.system('cls')  # Apaga histórico
+            print('Não foi possível apagar este índice\n'
+                  'Digite um número inteiro\n')
+        # No caso de erro de valor digitado do índice inexistente
+        except IndexError:
+            os.system('cls')  # Apaga histórico
+            print('Não foi possível apagar este índice\n'
+                  'Índice não existe na lista\n')
+
+    # Caso queira listar os itens
+    if opcao == 'l':
+        if lista == []:
+            os.system('cls')  # Apaga histórico
+            print('Nada para listar\n')
+        else:
+            os.system('cls')  # Apaga histórico
+            indices = range(len(lista))  # Váriavel que cria os índices
+            for indice in indices:
+                print(f'{indice} {lista[indice]}')
+            print('\n')
